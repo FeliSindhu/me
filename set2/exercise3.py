@@ -7,8 +7,7 @@ def is_odd(a_number):
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
-
+    return a_number % 2 != 0
 
 def fix_it(moves=True, should_move=True):
     """Decide what to do.
@@ -25,9 +24,17 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
-
-
+    
+    if moves and not should_move:
+        print("WD-40")
+        return "WD-40"
+    elif not moves and should_move:
+        print("Duct Tape")
+        return("Duct Tape")
+    else:
+        print("No Problem")
+        return ("No Problem")
+   
 def loops_1a():
     """Make 10 stars.
 
@@ -35,8 +42,13 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    
+    stars = []
+    
+    for i in range(10):
+        stars.append('*')
 
+    return stars
 
 def loops_1c(number_of_items=5, symbol="#"):
     """Respond to variables.
@@ -45,7 +57,12 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+
+    hashtags = []
+    for i in range(number_of_items):
+        hashtags.append(symbol)
+
+    return hashtags
 
 
 def loops_2():
@@ -66,8 +83,15 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    star_square = []
+    
+    for i in range(10):
+        star_list = []
+        for j in range(10):
+            star_list.append('*')
+        star_square.append(star_list)
 
+    return star_square
 
 def loops_3():
     """Make a rising block of numbers.
@@ -90,8 +114,15 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
-
+    
+    number_square = []
+    for i in range(10):
+        number_row =[]
+        for j in range(10):
+            number_row.append(str(i))
+        number_square.append(number_row)
+    
+    return number_square
 
 def loops_4():
     """Make a block of numbers that rises left to right.
@@ -110,7 +141,14 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    number_square = []
+    for i in range(10):
+        number_row =[]
+        for j in range(10):
+            number_row.append(str(j))
+        number_square.append(number_row)
+
+    return number_square
 
 
 def loops_5():
@@ -137,7 +175,15 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    number_square = []
+
+    for i in range(10):
+        coordinates_row =[]
+        for j in range(5):
+            coordinates_row.append('(i{}, j{})'.format(i,j))
+        number_square.append(coordinates_row)
+
+    return number_square
 
 
 def loops_6():
@@ -160,8 +206,15 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    
+    wedge=[]
+    for i in range(10):
+        number_row=[]
+        for j in range(i+1):
+            number_row.append(str(j))
+        wedge.append(number_row)
 
+    return wedge
 
 def loops_7():
     """Make a pyramid.
@@ -184,8 +237,24 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    
+    height = 5
 
+    pyramid = []
+    for i in range(height):
+        inside_pyramid = []
+        for j in range(4-i):
+            inside_pyramid.append(" ")
+        for k in range(1+i):
+            inside_pyramid.append("*")
+        for l in range(0+i):
+            inside_pyramid.append("*")
+        for m in range(4-i):
+            inside_pyramid.append(" ")
+        pyramid.append(inside_pyramid)
+        
+    return pyramid
+                   
 
 def little_printer(some_kind_of_list, exercise_name):
     """Help to see what's going on.
